@@ -48,7 +48,7 @@ jobs:
         fi
 
     - name: Run FPS data extraction and combination script
-      run: python fps_extraction_and_combination.py
+      run: python script.py
 
     - name: Compare new data with previous data
       id: compare-data
