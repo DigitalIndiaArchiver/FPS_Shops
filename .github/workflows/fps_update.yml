@@ -91,7 +91,7 @@ jobs:
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       with:
-        tag_name: "fps-shops-$(date +'%Y%m%d%H%M%S')"
+        tag_name: "fps-shops-$(date +'%Y%m%d-%H%M%S')"
         release_name: "FPS Shops Update - $(date +'%Y-%m-%d %H:%M:%S')"
         body: |
           Daily update of FPS Shops data.
