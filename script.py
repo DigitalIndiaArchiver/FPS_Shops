@@ -91,6 +91,12 @@ def combine_json_to_csv():
 
     result = pd.concat(dfs, ignore_index=True)
     result.drop_duplicates(inplace=True)
+    ordered_cols = ['fpsCode', 'fpsName', 'address', 'fpsowner', 'villageName', 'villageCode',
+                    'tehsilName', 'tehsilCode', 'districtCode', 'districtName', 'stateCode', 
+                    'stateName', 'latitude', 'longitude']
+    result = result[ordered_cols]
+    result.sort_values(by=['stateCode', 'districtCode', 'tehsilCode', 'villageCode','fpsCode'],
+                       inplace=True, ascending=[True, True, True, True, True])
     result.to_csv('ConsolidatedShops.csv', index=False, encoding='utf-8')
     print(f"Data combined and saved to ConsolidatedShops.csv")
 
