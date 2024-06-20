@@ -72,13 +72,12 @@ jobs:
         name: ConsolidatedShops.csv
         path: ConsolidatedShops.csv
 
-    - name: Create release with notes
+  - name: Create release with notes
       if: env.no_changes != 'true'
       uses: softprops/action-gh-release@v2
       with:
         files: ConsolidatedShops.csv
-        tag_name: "fps-shops-update-$(date +'%Y%m%d%H%M%S')"
-        release_name: "FPS Shops Update - $(date +'%Y-%m-%d %H:%M:%S')"
+        tag_name: "v$(date +'%Y.%m.%d.%H%M%S')"
         body: |
           Daily update of FPS Shops data.
 
