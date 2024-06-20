@@ -4,6 +4,7 @@ on:
   schedule:
     - cron: '0 0 * * *'  # Runs daily at midnight UTC
   workflow_dispatch:
+  push:
 
 jobs:
   update_fps_shops:
@@ -11,7 +12,7 @@ jobs:
 
     steps:
     - name: Checkout repository
-      uses: actions/checkout@v4
+      uses: actions/checkout@2
 
     - name: Set up Python
       uses: actions/setup-python@v5
