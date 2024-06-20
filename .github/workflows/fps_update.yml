@@ -73,14 +73,20 @@ jobs:
         name: ConsolidatedShops.csv
         path: ConsolidatedShops.csv
 
+    - name: Set tag name to current timestamp
+      run: |
+          NOW=$(date +'%Y%m%d%H%M%S')
+          TAG_NAME="v${NOW}"
+          echo "::set-env name=TAG_NAME::${TAG_NAME}"
+
     - name: Create release with notes
       if: env.no_changes != 'true'
       uses: softprops/action-gh-release@v2
       with:
           files: ConsolidatedShops.csv
-          tag_name: "v`$(date +'%Y.%m.%d.%H.%M.%S' | tr -d '-')`"
+          tag_name: "${{ env.TAG_NAME }}"
           body: |
-            Daily update of FPS Shops data -- $(date +'%Y.%m.%d).
+            Daily update of FPS Shops data.
 
             Changes:
             ${{ steps.compare-data.outputs.changes }}
