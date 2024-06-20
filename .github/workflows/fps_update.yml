@@ -17,7 +17,7 @@ jobs:
     - name: Set up Python
       uses: actions/setup-python@v5
       with:
-        python-version: '3.11'
+        python-version: '3.12'
 
     - name: Cache pip dependencies
       uses: actions/cache@v4
@@ -78,7 +78,7 @@ jobs:
       uses: softprops/action-gh-release@v2
       with:
           files: ConsolidatedShops.csv
-          tag_name: "v$(date +'%Y.%m.%d.%H%M%S')"
+          tag_name: "v$(date +'%Y%m%d%H%M%S')"
           body: |
             Daily update of FPS Shops data -- $(date +'%Y.%m.%d).
 
