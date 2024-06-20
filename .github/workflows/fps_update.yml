@@ -77,7 +77,7 @@ jobs:
       run: |
           NOW=$(date +'%Y%m%d%H%M%S')
           TAG_NAME="v${NOW}"
-          echo "::set-env name=TAG_NAME::${TAG_NAME}"
+          echo "TAG_NAME=${TAG_NAME}" >> $GITHUB_ENV
 
     - name: Create release with notes
       if: env.no_changes != 'true'
