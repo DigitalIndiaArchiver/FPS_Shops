@@ -28,7 +28,8 @@ Added Shops: {len(added_shops)}
 Removed Shops: {len(removed_shops)}
 Updated Shops: {len(updated_shops)}
 """
-
+print(f"Shops in previous release : {len(previous_data.index)}")
+print(f"Shops in current release : {len(current_data.index)}")
 print(changes)
 
 # Save changes to GitHub environment variable

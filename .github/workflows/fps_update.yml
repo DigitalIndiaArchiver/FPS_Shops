@@ -85,6 +85,7 @@ jobs:
       with:
           files: ConsolidatedShops.csv
           tag_name: "${{ env.TAG_NAME }}"
+          make_latest: true
           body: |
             Daily update of FPS Shops data.
 
