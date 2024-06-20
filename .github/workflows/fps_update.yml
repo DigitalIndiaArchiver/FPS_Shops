@@ -78,7 +78,7 @@ jobs:
       uses: softprops/action-gh-release@v2
       with:
           files: ConsolidatedShops.csv
-          tag_name: "v$(date +'%Y%m%d%H%M%S')"
+          tag_name: "v`$(date +'%Y%m%d%H%M%S')`"
           body: |
             Daily update of FPS Shops data -- $(date +'%Y.%m.%d).
 
