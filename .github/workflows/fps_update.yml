@@ -65,6 +65,18 @@ jobs:
         fi
       env:
         changes: ${{ steps.compare-data.outputs.changes }}
+    
+    - name: Generate Datapane report
+      run: |
+        mkdir -p datapane_report && \
+        python generate_viz.py  # Replace with your script to generate Datapane report
+
+    - name: Deploy to GitHub Pages
+      uses: peaceiris/actions-gh-pages@v3
+      with:
+        github_token: ${{ secrets.GITHUB_TOKEN }}
+        publish_dir: ./datapane_report  # Replace with the directory containing your generated report
+
 
     - name: Upload ConsolidatedShops.csv artifact
       if: env.no_changes != 'true'

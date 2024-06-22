@@ -1,3 +1,11 @@
 states/
 previous_ConsolidatedShops.csv
 ConsolidatedShops.csv
+*.png
+bin/
+include/
+lib/
+lib64/
+share/
+pyvenv.cfg
+*.html
